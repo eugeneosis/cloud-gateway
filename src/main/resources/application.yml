@@ -12,11 +12,6 @@ spring:
           uri: http://localhost:8084
           predicates:
             - Path=/**
-          filters:
-            - name: CircuitBreaker
-              args:
-                name: bot-service
-                fallbackuri: forward:/botservicefallback
     loadbalancer:
       ribbon:
         enabled: true
@@ -36,7 +31,6 @@ ribbon:
   ReadTimeout: 10000
 
 
-
 management:
   endpoints:
     web:
@@ -51,6 +45,8 @@ logging:
     org.springframework.web.reactive: DEBUG
     reactor.ipc.netty: DEBUG
     reactor.netty: DEBUG
+  file:
+    name: logs/cloudgateway-log.txt
 
 
 eureka:
