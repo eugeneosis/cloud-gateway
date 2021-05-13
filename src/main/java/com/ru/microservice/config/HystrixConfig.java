@@ -13,7 +13,7 @@ public class HystrixConfig extends HystrixCommand<String> {
     }
 
     @Override
-    protected String run() throws Exception {
+    protected String run() {
         HystrixCommandProperties.Setter()
                 .withExecutionTimeoutInMilliseconds(10000);
         return execute();

@@ -12,6 +12,11 @@ spring:
           uri: http://localhost:8084
           predicates:
             - Path=/**
+          filters:
+            - name: CircuitBreaker
+              args:
+                name: bot-service
+                fallbackuri: forward:/botservicefallback
     loadbalancer:
       ribbon:
         enabled: true
