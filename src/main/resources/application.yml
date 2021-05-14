@@ -8,27 +8,23 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: serurity-service
+        - id: security-service
           uri: http://localhost:8084
           predicates:
             - Path=/**
+
     loadbalancer:
       ribbon:
-        enabled: true
+        enabled: false
 
 
 hystrix:
   command:
-    HystrixConfig:
+    fallbackcmd:
       execution:
         isolation:
           thread:
             timeoutInMilliseconds: 10000
-
-
-ribbon:
-  ConnectTimeout: 3000
-  ReadTimeout: 10000
 
 
 management:
