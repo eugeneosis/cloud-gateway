@@ -8,12 +8,8 @@ import reactor.core.publisher.Mono;
 public class FallbackServiceController {
 
     @GetMapping("/botservicefallback")
-    public Mono<String> botServiceFallbackMethod() {
-        return Mono.just("Сервис временно не доступен");
-    }
+    public Mono<String> botServiceFallbackMethod() { return Mono.just("Сервис временно не доступен. \n Попробуйте обновить страницу или зайти позднее."); }
 
     @GetMapping("/uirestservicefallback")
-    public Mono<String> uiRestServiceFallbackMethod() {
-        return Mono.just("Сервис временно не доступен");
-    }
+    public Mono<String> uiRestServiceFallbackMethod() { return Mono.just("Сервис временно не доступен. \n Попробуйте обновить страницу или зайти позднее."); }
 }

@@ -24,7 +24,7 @@ hystrix:
       execution:
         isolation:
           thread:
-            timeoutInMilliseconds: 10000
+            timeoutInMilliseconds: 4000
 
 
 management:
@@ -42,14 +42,4 @@ logging:
     reactor.ipc.netty: DEBUG
     reactor.netty: DEBUG
   file:
-    name: logs/cloudgateway-log.txt
-
-
-eureka:
-  client:
-    register-with-eureka: true
-    fetch-registry: true
-    service-url:
-      defaultZone: http://localhost:8761/eureka/
-  instance:
-    hostname: localhost
+    name: logs/cloud-gateway-log.txt
