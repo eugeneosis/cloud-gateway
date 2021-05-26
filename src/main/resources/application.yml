@@ -1,5 +1,5 @@
 server:
-  port: 8080
+  port: ${port:8080}
 
 
 spring:
@@ -19,6 +19,11 @@ spring:
                 fallbackuri: forward:/securityservicefallback
       metrics:
         enabled: true
+
+
+eureka:
+  instance:
+    instance-id: cloud-gateway-service
 
 
 resilience4j.circuitbreaker:
@@ -42,10 +47,17 @@ management:
   endpoints:
     web:
       exposure:
-        include: '*'
+        include: info,health
   endpoint:
-    gateway:
+    refresh:
       enabled: true
+
+
+info:
+  app:
+    name: microservice application
+    description: cloud-gateway service
+    version: 1.0.0
 
 
 logging:
