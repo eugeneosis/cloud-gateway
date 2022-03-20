@@ -8,10 +8,6 @@ import reactor.core.publisher.Mono;
 @RestController
 public class FallbackController {
 
- /*   private static final String SECURITY_SERVICE = "security-service";
-    private static final String BOT_SERVICE = "bot-service";
-    private static final String UI_REST_SERVICE = "ui-rest-service";*/
-
     private static final String SERVICE_FALLBACK_CONSTANT = "Сервис временно не доступен. Попробуйте обновить страницу или зайти позднее.";
 
     @GetMapping("/securityservicefallback")
